@@ -251,12 +251,12 @@ window.NF_PUBLISHED = {
     {
       "id": "33497f311e415b32",
       "key": "2026-12-12|Group Music",
-      "value": "Jinu/Anju"
+      "value": "Anju/Jinu"
     },
     {
       "id": "2c4832ae248d85b9",
       "key": "2026-12-19|Anthakshari",
-      "value": "Jinu/Anju"
+      "value": "Anju/Jinu"
     },
     {
       "id": "985880b299f58694",
