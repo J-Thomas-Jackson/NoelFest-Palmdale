@@ -7,11 +7,6 @@ window.NF_PUBLISHED = {
       "name": "Aaron and Abhinav"
     },
     {
-      "id": "7d35d3c8d4f1418b",
-      "key": "2026-10-24|Pickle Ball|Men (Doubles) - 20 to 49",
-      "name": "Vinish and Seffin"
-    },
-    {
       "id": "34d9f8a4ed7de4ff",
       "key": "2026-10-24|Pickle Ball|Men (Doubles) - 50 & Above",
       "name": "Koshy and Thomas"
@@ -45,33 +40,143 @@ window.NF_PUBLISHED = {
       "id": "a16015bebcad3f3c",
       "key": "2026-10-31|Carroms - Doubles|Category 18 Above - Team 1",
       "name": "Anoop , Roshan"
+    },
+    {
+      "id": "96b01e1ee962320c",
+      "key": "2026-10-24|Pickle Ball|Men (Doubles) - 20 to 49",
+      "name": "Vinish and Roshan/Seffin"
+    },
+    {
+      "id": "2616a73cdf5c57c3",
+      "key": "2026-12-19|Anthakshari|Open Category",
+      "name": "Vinish , Veena , Varghese , Tobi"
+    },
+    {
+      "id": "8bbffde7c6f613a6",
+      "key": "2026-12-12|Group Music|Open Category",
+      "name": "Sheeba , Anila , Amulya , Alisha , Veena , Divya"
+    },
+    {
+      "id": "21c5edf1dc0bfddd",
+      "key": "2026-12-12|Group Music|Open Category",
+      "name": "Varghese,Seffin ,Vinish , Anoop , Vincent , Abhinav , Ethan"
+    },
+    {
+      "id": "c6f7152e59985cfc",
+      "key": "2026-12-06|Quiz|Open Category",
+      "name": "Jackson , Rachael , Ramesh"
+    },
+    {
+      "id": "cff3bdb6b318bed7",
+      "key": "2026-12-05|Cards|Open Category",
+      "name": "Varghese , John Thomas , Thomas , Ramesh , Jayesh , Roy"
+    },
+    {
+      "id": "f8ce299a837833f2",
+      "key": "2026-11-29|Nature Photography|Open Category",
+      "name": "Nethra, Abhinav"
+    },
+    {
+      "id": "15802254710411c0",
+      "key": "2026-11-28|Music - Solo|Below 12 - (Boys & Girls together)",
+      "name": "Ethan"
+    },
+    {
+      "id": "980d89d323ee48bc",
+      "key": "2026-11-28|Music - Solo|12 to 18 - Boys, Girls",
+      "name": "Abhinav"
+    },
+    {
+      "id": "d3ba3ae41128b168",
+      "key": "2026-11-28|Music - Solo|19 to 59 - Men, Women",
+      "name": "Amulya, Veena, Vinish"
+    },
+    {
+      "id": "a012fa592f6b5b62",
+      "key": "2026-11-22|Badminton - Doubles|15 & Below - Boys (Doubles)",
+      "name": "Ethan and Daveed , Jake and Antonio"
+    },
+    {
+      "id": "1acdd0a8ca1abdd1",
+      "key": "2026-11-22|Badminton - Doubles|15 & Below - Girls (Doubles)",
+      "name": "Emma and Elaine , Nethra and Indra"
+    },
+    {
+      "id": "68d94208bb499991",
+      "key": "2026-11-22|Badminton - Doubles|16 to 35 - Men (Doubles, Mixed Doubles)",
+      "name": "Abhinav and Aaron or Aaron and Bakku"
+    },
+    {
+      "id": "ee13cdfcacee45c6",
+      "key": "2026-11-22|Badminton - Doubles|36 to 50 - Men (Doubles, Mixed Doubles)",
+      "name": "Roshan and Seffin"
+    },
+    {
+      "id": "611d24f7c437ee37",
+      "key": "2026-11-22|Badminton - Doubles|Above 50 - Men (Doubles, Mixed Doubles)",
+      "name": "Koshy and Thomas"
+    },
+    {
+      "id": "f1e8482b6c5eb777",
+      "key": "2026-11-21|Table Tennis - Doubles|15 & Below - Girls (Doubles)",
+      "name": "Rebecca and Emma"
+    },
+    {
+      "id": "73931492d1c23f16",
+      "key": "2026-11-21|Table Tennis - Doubles|Above 50 - Men (Doubles, Mixed Doubles)",
+      "name": "Koshy and ?"
+    },
+    {
+      "id": "15d520576877cb0b",
+      "key": "2026-11-21|Table Tennis - Doubles|36 to 50 - Men (Doubles, Mixed Doubles)",
+      "name": "Rebecca father and mother ?"
+    },
+    {
+      "id": "6a96dbb9560ad79a",
+      "key": "2026-11-15|Throw Ball|For Ladies - Open Category",
+      "name": "Rachael , Riya , Arleen , Alisha , Emma, Elaine , Nicole"
+    },
+    {
+      "id": "c77526c719822e63",
+      "key": "2026-11-15|Cricket|Open Category",
+      "name": "Aaron , Roshan , Abhinav , Anoop , Vinish , Dinesh"
+    },
+    {
+      "id": "982c2f6ab3c07ec5",
+      "key": "2026-11-01|8 Ball Pool|Open Category - Team 1",
+      "name": "Vincent , Koshy"
+    },
+    {
+      "id": "c40353bc657308a0",
+      "key": "2026-11-07|Chess|18 & Below",
+      "name": "Elaine and Daveed/Jake"
+    },
+    {
+      "id": "ca3e7748c03363a1",
+      "key": "2026-11-07|Chess|Above 18",
+      "name": "Koshy ?"
     }
   ],
   "owners": [
     {
       "id": "4ab4ba37d91e40d5",
       "key": "2026-10-24|Pickle Ball",
-      "value": "Vincent"
+      "value": "Vincent/Roy"
     },
     {
       "id": "f52dc3645cc40436",
       "key": "2026-10-25|Flower Arrangement",
-      "value": "Anju"
+      "value": "Anju/Jinu"
     },
     {
       "id": "2ee385e89e9c58c9",
       "key": "2026-10-31|Carroms - Doubles",
-      "value": "Roy"
+      "value": "Vincent/Roy"
     },
     {
       "id": "a033883100f1e3a2",
       "key": "2026-11-01|8 Ball Pool",
-      "value": "Roy"
-    },
-    {
-      "id": "0fb4d81710d81978",
-      "key": "2026-11-07|Chess",
-      "value": "Prem"
+      "value": "Vincent/Roy"
     },
     {
       "id": "f4f695deda7cac21",
@@ -106,32 +211,32 @@ window.NF_PUBLISHED = {
     {
       "id": "6151a8a497943877",
       "key": "2026-11-15|Throw Ball",
-      "value": "NA"
+      "value": "Riya"
     },
     {
       "id": "1c131e17e53318a6",
       "key": "2026-11-21|Table Tennis - Doubles",
-      "value": "Roy / Vincent"
+      "value": "Vincent/Roy"
     },
     {
       "id": "9866b19147d91759",
       "key": "2026-11-22|Badminton - Doubles",
-      "value": "Roy / Vincent"
+      "value": "Vincent/Roy"
     },
     {
       "id": "3b5e7eadca4feeb8",
       "key": "2026-11-28|Music - Solo",
-      "value": "Veena"
+      "value": "Anju/Jinu"
     },
     {
       "id": "f9124e075560e370",
       "key": "2026-11-29|Nature Photography",
-      "value": "Roy"
+      "value": "Vincent/Roy"
     },
     {
       "id": "250e26d8486a55a9",
       "key": "2026-12-05|Cards",
-      "value": "Roy"
+      "value": "Vincent/Roy"
     },
     {
       "id": "142fb211a67d7981",
@@ -146,12 +251,17 @@ window.NF_PUBLISHED = {
     {
       "id": "33497f311e415b32",
       "key": "2026-12-12|Group Music",
-      "value": "Jinu"
+      "value": "Jinu/Anju"
     },
     {
       "id": "2c4832ae248d85b9",
       "key": "2026-12-19|Anthakshari",
-      "value": "Jinu"
+      "value": "Jinu/Anju"
+    },
+    {
+      "id": "985880b299f58694",
+      "key": "2026-11-07|Chess",
+      "value": "Vinish"
     }
   ]
 };
