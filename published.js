@@ -181,32 +181,32 @@ window.NF_PUBLISHED = {
     {
       "id": "f4f695deda7cac21",
       "key": "2026-11-14|Candy Picking",
-      "value": "Dinesh"
+      "value": "Vinish/Dinesh"
     },
     {
       "id": "e62e0e804e1e0ca3",
       "key": "2026-11-14|Painting",
-      "value": "Dinesh"
+      "value": "Vinish/Dinesh"
     },
     {
       "id": "ec6675f9bb3d2357",
       "key": "2026-11-14|Bucket Throw",
-      "value": "Dinesh"
+      "value": "Vinish/Dinesh"
     },
     {
       "id": "7fa5b578f5b88a75",
       "key": "2026-11-14|Goal (Free Kick)",
-      "value": "Dinesh"
+      "value": "Vinish/Dinesh"
     },
     {
       "id": "498432039cdd82e5",
       "key": "2026-11-14|Basket Ball Free Throw",
-      "value": "Dinesh"
+      "value": "Vinish/Dinesh"
     },
     {
       "id": "125b53f89d00bd7d",
       "key": "2026-11-15|Cricket",
-      "value": "Vinish"
+      "value": "Vinish/Dinesh"
     },
     {
       "id": "6151a8a497943877",
@@ -261,7 +261,7 @@ window.NF_PUBLISHED = {
     {
       "id": "985880b299f58694",
       "key": "2026-11-07|Chess",
-      "value": "Vinish"
+      "value": "Vinish/Dinesh"
     }
   ]
 };
