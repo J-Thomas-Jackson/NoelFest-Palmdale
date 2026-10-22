@@ -180,13 +180,15 @@
     const text = [fmtDate(r.date), day, r.event, ...r.categories, ...r.entries, r.venue, r.host, r.coordinator, r.phone, r.competition ? '' : 'not scored'].join(' ').toLowerCase();
     return { ...r, day, text };
   });
-  const schState = { q: '', event: '', category: '' };
+  const schState = { q: '', event: '', category: '', owner: '' };
 
   function scheduleSection() {
     const uniq = (fn, sort) => { const v = [...new Set(SCH.map(fn))]; return sort ? v.sort((a, b) => a.localeCompare(b)) : v; };
+    const ownerValues = [...new Set(S.owners.map(o => o.value).filter(Boolean))].sort((a, b) => a.localeCompare(b));
     const filters = [
       ['event', 'All events', uniq(r => r.event).map(v => [v, v])],
-      ['category', 'All categories', [...new Set(SCH.flatMap(r => r.categories))].sort((a, b) => a.localeCompare(b)).map(v => [v, v])]
+      ['category', 'All categories', [...new Set(SCH.flatMap(r => r.categories))].sort((a, b) => a.localeCompare(b)).map(v => [v, v])],
+      ['owner', 'All owners', ownerValues.map(v => [v, v])]
     ];
     const body = h('tbody');
     const count = h('span', { class: 'small muted', role: 'status' });
@@ -241,7 +243,8 @@
       const rows = SCH.filter(r =>
         (!q || r.text.includes(q) || partText(r).includes(q)) &&
         (!schState.event || r.event === schState.event) &&
-        (!schState.category || r.categories.includes(schState.category)));
+        (!schState.category || r.categories.includes(schState.category)) &&
+        (!schState.owner || S.owners.find(o => o.key === `${r.date}|${r.event}`)?.value === schState.owner));
       count.textContent = `Showing ${rows.length} of ${SCH.length} events`;
       // One row per category; shared event details are merged across them (rowspan).
       body.replaceChildren(...(rows.length ? rows.flatMap(r => {
