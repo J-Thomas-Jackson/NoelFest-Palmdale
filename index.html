@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data:; base-uri 'none'; form-action 'none'">
+<title>Noel Palmdale — Noel Fest Event Planner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">&#10052;</span>
+    <div>
+      <strong>Noel Palmdale</strong>
+      <small>Noel Fest Event Planner</small>
+    </div>
+  </div>
+  <div class="top-actions">
+    <span id="modeBadge" class="mode-badge">View only</span>
+    <span id="saveState" class="save-state edit-only" role="status" aria-live="polite"></span>
+    <button class="btn gold sm edit-only" data-action="save" type="button" title="Save changes (Ctrl/Cmd+S)" disabled>Save</button>
+    <button class="btn ghost sm edit-only" data-action="publish" type="button" title="Download published.js to share your changes with everyone">Publish</button>
+    <button class="btn ghost sm edit-only" data-action="export" type="button" title="Download backup (JSON)">Backup</button>
+    <button class="btn ghost sm edit-only" data-action="import" type="button" title="Restore from backup">Restore</button>
+    <input type="file" id="importFile" class="edit-only" accept="application/json,.json" hidden>
+  </div>
+</header>
+
+<div class="shell">
+  <main id="view" tabindex="-1"></main>
+</div>
+
+<dialog id="dlg"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="schedule.js"></script>
+<script src="published.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
