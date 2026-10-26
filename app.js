@@ -191,6 +191,7 @@
       ['owner', 'All owners', ownerValues.map(v => [v, v])]
     ];
     const body = h('tbody');
+    const mobileCards = h('div', { class: 'sched-cards' });
     const count = h('span', { class: 'small muted', role: 'status' });
     const lines = arr => h('div', { class: 'lines' }, arr.map(x => h('div', {}, x)));
     const keyOf = (r, cat) => `${r.date}|${r.event}|${cat}`;
@@ -237,16 +238,19 @@
       });
       return h('td', { class: 'owner', rowspan: span }, inp);
     };
+    let currentRows = [];
     const draw = () => {
       const q = schState.q.trim().toLowerCase();
       const partText = r => S.entries.filter(e => e.key.startsWith(`${r.date}|${r.event}|`)).map(e => e.name).concat(S.owners.filter(o => o.key === `${r.date}|${r.event}`).map(o => o.value)).join(' ').toLowerCase();
-      const rows = SCH.filter(r =>
+      currentRows = SCH.filter(r =>
         (!q || r.text.includes(q) || partText(r).includes(q)) &&
         (!schState.event || r.event === schState.event) &&
         (!schState.category || r.categories.includes(schState.category)) &&
         (!schState.owner || S.owners.find(o => o.key === `${r.date}|${r.event}`)?.value === schState.owner));
+      const rows = currentRows;
       count.textContent = `Showing ${rows.length} of ${SCH.length} events`;
-      // One row per category; shared event details are merged across them (rowspan).
+
+      // Desktop table
       body.replaceChildren(...(rows.length ? rows.flatMap(r => {
         const cats = schState.category ? [schState.category] : r.categories;
         const span = cats.length;
@@ -261,7 +265,50 @@
           i === 0 && h('td', { rowspan: span }, r.host),
           i === 0 && h('td', { rowspan: span }, r.coordinator, h('div', { class: 'small' }, h('a', { href: 'tel:' + r.phone.replace(/\D/g, '') }, r.phone)))));
       }) : [h('tr', {}, h('td', { colspan: 9, class: 'muted' }, 'No events match your search or filters.'))]));
+
+      // Mobile cards
+      mobileCards.replaceChildren(...(rows.length ? rows.map(r => {
+        const owner = S.owners.find(o => o.key === `${r.date}|${r.event}`)?.value;
+        const cats = schState.category ? [schState.category] : r.categories;
+        const participants = S.entries.filter(e => e.key.startsWith(`${r.date}|${r.event}|`));
+        return h('div', { class: 'sched-card' },
+          h('div', { class: 'sched-card-head' },
+            h('div', {},
+              h('div', { class: 'sched-card-title' }, r.event, !r.competition && ' ', !r.competition && badge('Not scored', 'warn')),
+              h('div', { class: 'sched-card-date' }, fmtDate(r.date), ' · ', r.day)),
+            owner && h('div', { class: 'sched-card-owner' }, owner)),
+          h('div', { class: 'sched-card-meta' },
+            r.venue && h('span', {}, '📍 ', r.venue),
+            r.coordinator && h('span', {}, '📞 ', h('a', { href: 'tel:' + r.phone.replace(/\D/g, '') }, r.coordinator))),
+          ...cats.map(cat => {
+            const names = participants.filter(e => e.key === keyOf(r, cat));
+            return h('div', { class: 'sched-cat' },
+              h('div', { class: 'sched-cat-name' }, cat),
+              names.length ? h('ul', { class: 'plist' }, names.map(e => h('li', {}, h('strong', {}, e.name)))) : h('span', { class: 'muted small' }, 'No participants yet'));
+          }));
+      }) : [h('div', { class: 'empty' }, 'No events match your search or filters.')]));
     };
+
+    // Export to Excel (CSV)
+    function exportCsv(rows) {
+      const escape = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+      const headers = ['Date', 'Day', 'Event', 'Owner', 'Category', 'Participants', 'Entries per Association', 'Venue', 'Host', 'Co-ordinator', 'Phone'];
+      const csvRows = [headers.map(escape).join(',')];
+      rows.forEach(r => {
+        const owner = S.owners.find(o => o.key === `${r.date}|${r.event}`)?.value || '';
+        const cats = schState.category ? [schState.category] : r.categories;
+        cats.forEach(cat => {
+          const names = S.entries.filter(e => e.key === keyOf(r, cat)).map(e => e.name).join('; ');
+          csvRows.push([r.date, r.day, r.event, owner, cat, names, r.entries.join('; '), r.venue, r.host, r.coordinator, r.phone].map(escape).join(','));
+        });
+      });
+      const blob = new Blob([csvRows.join('\r\n')], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = h('a', { href: url, download: 'noel-fest-schedule.csv' });
+      document.body.append(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      toast('Schedule exported as CSV (open with Excel)');
+    }
 
     const search = h('input', { type: 'search', placeholder: 'Search event, category, participant, owner, venue…', 'aria-label': 'Search schedule', maxlength: 100,
       oninput: e => { schState.q = e.target.value; draw(); } });
@@ -273,17 +320,22 @@
       if (sel.value !== schState[key]) schState[key] = '';
       return sel;
     });
-    const reset = btn('Reset', 'ghost sm', () => {
+    const resetBtn = btn('Reset', 'ghost sm', () => {
       Object.keys(schState).forEach(k => { schState[k] = ''; });
       search.value = ''; selects.forEach(s => { s.value = ''; }); draw();
     });
     draw();
     return h('div', { class: 'table-card sched' },
       h('div', { class: 'card-head' }, h('h2', {}, 'Schedule of Events - Noel Fest 2026'), count),
-      h('div', { class: 'toolbar' }, search, ...selects, reset),
+      h('div', { class: 'toolbar' },
+        search, ...selects, resetBtn,
+        h('div', { class: 'toolbar-actions' },
+          btn('⬇ Excel', 'ghost sm', () => exportCsv(currentRows)),
+          btn('🖨 Print', 'ghost sm', () => window.print()))),
       h('div', { class: 'table-wrap' }, h('table', {},
         h('thead', {}, h('tr', {}, ['Event date', 'Event name', 'Owner', 'Category', 'Participant name', 'Participants from each association', 'Venue', 'Hosting association', 'Co-ordinator'].map(t => h('th', {}, t)))),
         body)),
+      mobileCards,
       h('p', { class: 'small muted' }, '**Freestyle Group Dance is not a competition item and will not be awarded any points.'));
   }
 
