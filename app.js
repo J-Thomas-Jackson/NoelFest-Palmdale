@@ -175,11 +175,12 @@
   const views = {};
 
   // ---------- Schedule table (home page) ----------
+  const today = new Date(); today.setHours(0, 0, 0, 0);
   const SCH = (window.NF_SCHEDULE || []).map(r => {
     const day = new Date(+r.date.slice(0, 4), +r.date.slice(5, 7) - 1, +r.date.slice(8, 10)).toLocaleDateString('en-US', { weekday: 'long' });
     const text = [fmtDate(r.date), day, r.event, ...r.categories, ...r.entries, r.venue, r.host, r.coordinator, r.phone, r.competition ? '' : 'not scored'].join(' ').toLowerCase();
     return { ...r, day, text };
-  });
+  }).filter(r => new Date(+r.date.slice(0, 4), +r.date.slice(5, 7) - 1, +r.date.slice(8, 10)) >= today);
   const schState = { q: '', event: '', category: '', owner: '' };
 
   function scheduleSection() {
