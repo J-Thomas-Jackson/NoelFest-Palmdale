@@ -118,7 +118,7 @@ window.NF_PUBLISHED = {
     },
     {
       "id": "982c2f6ab3c07ec5",
-      "key": "2026-11-01|8 Ball Pool|Open Category - Team 1",
+      "key": "2026-10-31|8 Ball Pool|Open Category - Team 1",
       "name": "Vincent , Koshy"
     },
     {
@@ -165,7 +165,7 @@ window.NF_PUBLISHED = {
     },
     {
       "id": "a033883100f1e3a2",
-      "key": "2026-11-01|8 Ball Pool",
+      "key": "2026-10-31|8 Ball Pool",
       "value": "Vincent/Roy"
     },
     {
