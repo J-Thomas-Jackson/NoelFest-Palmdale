@@ -27,21 +27,6 @@ window.NF_PUBLISHED = {
       "name": "Anju , Teena, Theresa"
     },
     {
-      "id": "5bfd2fb9774e70c6",
-      "key": "2026-10-31|Carroms - Doubles|Category 18 and Below - Team 1",
-      "name": "Abhinav , Aadi"
-    },
-    {
-      "id": "bea315df58481627",
-      "key": "2026-10-31|Carroms - Doubles|Category 18 and Below - Team 2",
-      "name": "Aaron , Arleen"
-    },
-    {
-      "id": "a16015bebcad3f3c",
-      "key": "2026-10-31|Carroms - Doubles|Category 18 Above - Team 1",
-      "name": "Anoop , Roshan"
-    },
-    {
       "id": "96b01e1ee962320c",
       "key": "2026-10-24|Pickle Ball|Men (Doubles) - 20 to 49",
       "name": "Vinish and Roshan/Seffin"
@@ -102,16 +87,6 @@ window.NF_PUBLISHED = {
       "name": "Emma and Elaine , Nethra and Indra"
     },
     {
-      "id": "68d94208bb499991",
-      "key": "2026-11-22|Badminton - Doubles|16 to 35 - Men (Doubles, Mixed Doubles)",
-      "name": "Abhinav and Aaron or Aaron and Bakku"
-    },
-    {
-      "id": "ee13cdfcacee45c6",
-      "key": "2026-11-22|Badminton - Doubles|36 to 50 - Men (Doubles, Mixed Doubles)",
-      "name": "Roshan and Seffin"
-    },
-    {
       "id": "611d24f7c437ee37",
       "key": "2026-11-22|Badminton - Doubles|Above 50 - Men (Doubles, Mixed Doubles)",
       "name": "Koshy and Thomas"
@@ -155,6 +130,21 @@ window.NF_PUBLISHED = {
       "id": "ca3e7748c03363a1",
       "key": "2026-11-07|Chess|Above 18",
       "name": "Koshy ?"
+    },
+    {
+      "id": "1128d10fa7248bff",
+      "key": "2026-11-22|Badminton - Doubles|16 to 35 - Men (Doubles, Mixed Doubles)",
+      "name": "Aaron and Bakku"
+    },
+    {
+      "id": "e544eb6da9d6f667",
+      "key": "2026-11-22|Badminton - Doubles|36 to 50 - Men (Doubles, Mixed Doubles)",
+      "name": "vincent and Seffin"
+    },
+    {
+      "id": "82b23b1e71cfac21",
+      "key": "2026-11-22|Badminton - Doubles|16 to 35 - Women (Doubles, Mixed Doubles)",
+      "name": "Riya and Rachael"
     }
   ],
   "owners": [
